@@ -142,11 +142,12 @@
         transform-origin: top left; /* 设置缩放原点 */
         width: 250%; /* 确保缩小后内容依然能填满页面 */
         height: auto; /* 调整高度 */
-        overflow: hidden; /* 隐藏滚动条 */
+        overflow: auto; /* 隐藏滚动条 */
     }
 
     .head, .content, .correspondence, .news, .researsh, .activities, .interests, .foot {
         height: auto; /* 调整高度 */
+        border-bottom: 1px solid black;
     }
 
     .head {
@@ -393,13 +394,28 @@
     </div>
 
    
-     <script>
+    <script>
         function adjustHeight() {
+            const foot = document.querySelector('.foot');
+            const body = document.body;
+            
             if (window.innerWidth <= 600) {
-                document.body.style.height = (document.body.scrollHeight / 0.4) + 'px';
+                // 计算 body 的总高度，包括 foot 的高度
+                const totalHeight = body.scrollHeight;
+                const footHeight = foot.scrollHeight;
+                
+                // 设置 body 的高度为 totalHeight - footHeight，以便能看到 foot 的顶部
+                body.style.height = (totalHeight / 0.4) + 'px';
+                body.style.maxHeight = 'calc(100vh - ' + (footHeight / 0.4) + 'px)';
+                body.style.overflow = 'auto';
+            } else {
+                // 重置 body 的高度和溢出设置，以适应桌面视图
+                body.style.height = 'auto';
+                body.style.maxHeight = 'none';
+                body.style.overflow = 'visible';
             }
         }
-
+    
         window.addEventListener('resize', adjustHeight);
         window.addEventListener('load', adjustHeight);
     </script>
