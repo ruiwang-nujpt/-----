@@ -9,8 +9,11 @@
             display: flex;
             margin: 0;
             height: 100vh;
+            overflow: hidden;
         }
-
+        iframe{
+            height: 100%;
+        }
         .sidebar {
             width: 15%;
             background-color: rgb(0, 51, 102);
@@ -32,31 +35,33 @@
             margin-bottom: 10px;
             border-radius: 4px;
             font-size: 2vw; /* 默认字体大小为2vw */
-        }
+            white-space: nowrap; /* 防止文字换行 */
+       
+}
 
-        @media (max-width: 600px) {
-            .sidebar {
-                width: 25%; /* 手机端sidebar更宽一些 */
-            }
-            .sidebar a {
-                font-size: 4vw; /* 调整手机端字体大小 */
-            }
-        }
+@media (max-width: 600px) {
+    .sidebar {
+        width: 25%; /* 手机端sidebar更宽一些 */
+    }
+    .sidebar a {
+        font-size: 3vw; /* 调整手机端字体大小 */
+    }
+}
 
-        @media (min-width: 601px) and (max-width: 1024px) {
-            .sidebar {
-                width: 20%; /* 平板端sidebar宽度 */
-            }
-            .sidebar a {
-                font-size: 3vw; /* 调整平板端字体大小 */
-            }
-        }
+@media (min-width: 601px) and (max-width: 1024px) {
+    .sidebar {
+        width: 20%; /* 平板端sidebar宽度 */
+    }
+    .sidebar a {
+        font-size: 3vw; /* 调整平板端字体大小 */
+    }
+}
 
-        @media (min-width: 1025px) {
-            .sidebar a {
-                font-size: 1.5vw; /* 大屏幕字体大小 */
-            }
-        }
+@media (min-width: 1025px) {
+    .sidebar a {
+        font-size: 1.5vw; /* 大屏幕字体大小 */
+    }
+}
     </style>
 </head>
 <body>

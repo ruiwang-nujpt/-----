@@ -135,132 +135,132 @@
         }
 }
 @media only screen and (max-width: 600px) {
+    body {
+        transform: scale(0.5); /* 缩小页面 */
+        transform-origin: top left; /* 设置缩放原点 */
+        width: 200%; /* 确保缩小后内容依然能填满页面 */
+    }
+
+    .head,
+    .content,
+    .correspondence,
+    .news,
+    .researsh,
+    .activities,
+    .interests,
+    .foot {
+        width: 100%; 
+        height: auto;
+        border-bottom: 1px solid black;
+      
+    }
+ 
     .head {
+        display: flex;
+        flex-direction: row; /* 垂直排列 */
+        gap: 10px; /* 中间加距离 */
+    }
+    
+    .head img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #left,
+    #mid,
+    #right {
         width: 100%;
+    }
+
+    #left {
+        height: auto;
+        margin-right: 0;
+    }
+
+    #left img {
+        max-width: 100%;
         height: auto;
         display: block;
-        border-bottom: 1px solid black;
+        margin: 0 auto; /* 居中对齐 */
+        padding-top: 5vh;
     }
-    .content {
-        width: 100%;
+
+    #right img {
+        max-width: 100%;
         height: auto;
-        border-bottom: 1px solid black;
+        display: block;
+        margin: 0 auto; /* 居中对齐 */
     }
-    .correspondence {
-        width: 100%;
-        height: auto;
-        border-bottom: 1px solid black;
-    }
-    .news {
-        width: 100%;
-        border-bottom: 1px solid black;
-    }
-    .researsh {
-        width: 100%;
-        height: auto;
-        border-bottom: 1px solid black;
-    }
-    .activities {
-        width: 100%;
-        height: auto;
-        border-bottom: 1px solid black;
-    }
-    .interests {
-        width: 100%;
-        border-bottom: 1px solid black;
-    }
+
     .interests_content {
-        display: block;
+        display: flex;
+        flex-direction: row; /* 竖向排列 */
     }
-    .interests h4 {
-        height: auto;
-        width: 100%;
-    }
-    .interests_text {
-        width: 100%;
-        height: auto;
-    }
+
+    .interests h4,
+    .interests_text,
     .interests_img {
         width: 100%;
+    }
+
+    .interests_img {
         height: auto;
         padding-left: 0;
     }
+
     .interests_img img {
         width: 100%;
         height: auto;
     }
-    .researsh p {
-        font-weight: normal;
-    }
-    .foot {
-        width: 100%;
-        height: auto;
-        font-weight: lighter;
-    }
-    #left {
-        width: 100%;
-        height: auto;
-        margin-top: 20px;
-        margin-right: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #left img {
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
-        height: auto;
-    }
-    #mid {
-        width: 100%;
-        margin-top: 20px;
-    }
-    #right {
-        width: 100%;
-        margin-top: 20px;
-    }
+
     a {  
         color: blue; /* 字体颜色为蓝色 */  
         text-decoration: underline; /* 加下划线 */  
     }
+
     #school_log {
-        margin-top: 20px;
-        text-align: center;
         height: auto; /* 设置容器高度 */
     }
+
     #school_log img {
         max-width: 100%;
         max-height: 100%; /* 确保图片不超过容器高度 */
         margin-right: 0;
         display: inline-block;
     }
+
     li {  
         margin-bottom: 15px; /* 添加10像素的行间距 */  
         font-weight: bold;
     }
+
     table {  
         width: 100%;  
         border-collapse: collapse;  
     }  
+
     th, td {  
         padding: 8px;  
         text-align: left;  
         font-size: 12px; /* 调整字体大小 */
     }  
+
     .td_bold {
         font-weight: bold;
         font-size: 14px; /* 调整字体大小 */
     }
+
     .news li {
         font-weight: normal;
     }
+
     .news span {
         font-weight: bold;
     }
 }
 
-       
+
+     
     </style>
 </head>
 <body>
@@ -287,7 +287,6 @@
             <div id="school_log">  
                 <img src="./imgs/teamlog.png">    
                 <img src="./imgs/log.png"> 
-           
             </div>
         </div>
     </div>
@@ -398,5 +397,24 @@
     <div class="foot">
         <p>Last Modified: 2024-07-27</p>
     </div>
+
+    <script>
+        // 修正页面高度以避免底部多余空白
+        function adjustHeight() {
+            var bodyHeight = document.body.scrollHeight;
+            var windowHeight = window.innerHeight;
+
+            if (bodyHeight < windowHeight) {
+                document.body.style.height = windowHeight + 'px';
+            } else {
+                document.body.style.height = 'auto';
+            }
+        }
+
+        // 监听窗口大小变化事件
+        window.addEventListener('resize', adjustHeight);
+        // 在页面加载完成时调整高度
+        document.addEventListener('DOMContentLoaded', adjustHeight);
+    </script>
 </body>
 </html>
