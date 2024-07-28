@@ -136,9 +136,11 @@
 }
 @media only screen and (max-width: 600px) {
     body {
-        transform: scale(0.5); /* 缩小页面 */
+        transform: scale(0.4); /* 缩小页面 */
         transform-origin: top left; /* 设置缩放原点 */
-        width: 200%; /* 确保缩小后内容依然能填满页面 */
+        width: 250%; /* 确保缩小后内容依然能填满页面 */
+        height: 100%;
+        overflow: hidden;
     }
 
     .head,
@@ -150,7 +152,7 @@
     .interests,
     .foot {
         width: 100%; 
-        height: auto;
+        height: 100%;
         border-bottom: 1px solid black;
       
     }
@@ -273,11 +275,15 @@
             <h2>(王睿)</h2>
             <p style="font-weight: bold; ">Lecturer</p>
             <p></p>
-            <a href="https://cs.njupt.edu.cn/" target="_blank" >School of Computer Science,</a>
+            <p></p>
+           
+            <p><a href="https://cs.njupt.edu.cn/" target="_blank" >School of Computer </a></p>
+            <a href="https://cs.njupt.edu.cn/" target="_blank" >Science,</a>
             <p></p>
             <p></p>
-            <p></p>
-            <a href="https://m.njupt.edu.cn/_s5/_t44/main.psp"target="_blank">Nanjing University of Posts and Telecommunications</a>,china
+            <p>
+            <a href="https://m.njupt.edu.cn/_s5/_t44/main.psp"target="_blank">Nanjing University of Posts</a></p>
+            <a href="https://m.njupt.edu.cn/_s5/_t44/main.psp"target="_blank">  and Telecommunications</a>,china
             <p></p>
             <p></p>
            <!--  <p style="color: rgb(126, 71, 4);">[Academic Profile]:</p>
@@ -285,8 +291,9 @@
         </div>
         <div id="right">
             <div id="school_log">  
-                <img src="./imgs/teamlog.png">    
                 <img src="./imgs/log.png"> 
+                <img src="./imgs/teamlog.png">    
+               
             </div>
         </div>
     </div>
