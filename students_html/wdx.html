@@ -1,0 +1,212 @@
+<!DOCTYPE html>  
+<html lang="zh-CN" style="height: 100%;"> <!-- 添加高度 -->  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>wdx</title>  
+    <base target="_blank">
+    <style>  
+      html, body { /* 设置html和body的高度为100% */  
+        height: 100%;  
+        margin: 0; /* 移除默认的margin */  
+      }  
+  
+      .container {    
+        display: flex; /* 启用Flexbox布局 */    
+        width: 100%; /* 容器占满整个视口宽度 */    
+        height: 100%; /* 容器高度也为100% */  
+      }    
+  
+      .left-div {    
+        width: 15%; /* 左边div占页面宽度的15% */    
+        height: 100%; /* 左边div高度也为100% */  
+        background-color: rgb(231, 230, 233); /* 背景色 */    
+        display: flex; /* 使用 Flex 布局 */
+        flex-direction: column; /* 垂直排列内容 */
+      }    
+  
+      .mid-div {    
+        width: 65%; /* 右边div占据剩余的空间 */    
+        height: 100%; /* 右边div高度也为100% */ 
+        overflow-y: auto; /* 如果内容超出高度，启用滚动条 */ 
+      } 
+      .right-div {    
+        flex-grow: 1; /* 右边div占据剩余的空间 */    
+        height: 100%; /* 右边div高度也为100% */  
+        
+      }  
+      .menu-category{
+        border-bottom: 1px solid gray;
+        font-size: 20px;
+        margin-left: 20px;
+        padding-bottom: 10px;
+  
+      }
+      .menu-item{
+        margin-left: 20px;
+      }
+      a:visited {  
+        color: rgb(84, 84, 241); /* 设置与未访问时相同的颜色 */  
+    
+      } 
+      #toptitle{
+        text-align: left;
+        margin-left: 10px;
+        border-bottom: 3px double gray;
+
+      }
+      .head{
+        width: 100%;
+        height: 280px;
+        display: flex;
+       
+    }
+    #left {  
+
+      width: 20%;  
+    
+      display: flex; /* 设置为Flex容器 */  
+    
+      justify-content: center; /* 水平居中子元素 */  
+    
+      align-items: center; /* 垂直居中子元素 */  
+    
+      flex-direction: column; /* 如果需要垂直排列内容 */  
+    
+      height: 100%; /* 或者设置一个具体的高度 */  
+    
+    }  
+    .stu_photo {  
+     width: 180px;
+     height: 240px;
+     padding-left: 40px;
+    }  
+    .stu_photo img {  
+      width: 100%; /* 如果需要图片充满.stu_photo */  
+      height: auto; /* 保持图片的原始宽高比 */  
+    }
+
+    #mid{
+      width: 30%;
+      padding-left: 80px;
+      
+   }
+    #right{
+      width: 50%;
+      
+    }
+    #mid div{
+      margin-bottom: 5px;
+    }
+  #school_log{
+    margin-left: 100px;
+    margin-top: 30px;
+}
+  .Biography{
+    border-top: 1px black;
+  }
+  .small_title{
+    color: rgb(84, 84, 241);
+    font-size: 22px;
+    margin-left: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid gray;
+  }
+  .school{
+    padding-left: 50px;
+  }
+    </style>  
+</head>  
+<body style="margin: 0;"> <!-- 移除默认的margin，虽然已经在全局样式中设置，但这里再次设置以防万一 -->  
+  <div class="container">    
+    <div class="left-div">
+      <div class="menu1">
+      <div class="menu-category" style="padding-top: 37px;">Links</div>
+      <div class="menu-item"><a href="../Students.html" target="blank">TEAM Members</a></div>
+      <div class="menu-item"><a href="https://m.njupt.edu.cn/_s5/_t44/main.psp">Nanjing University of Posts and Telecommunications</a></div>
+     </div>
+     <div class="menu2" style="margin-top: 20px;">
+      <div class="menu-category">Blogs</div>
+      <div class="menu-item"><a href="http://palm.seu.edu.cn/members.html" target="blank">Github</a></div>
+      
+     </div>
+    </div>    
+    <div class="mid-div">
+      <div id="toptitle">
+        <h2 style="color: rgb(22, 125, 222);" >Dongxin Wang </h2>
+       </div>
+       <div class="head">
+        <div id="left">
+            <img src="../imgs/students/wdx.jpg" class="stu_photo">
+        </div>
+        <div id="mid">
+            <div style="margin-top: 30px;">王栋欣</div>
+            <div>DongxinWang</div>
+            <div style="font-weight: bold; ">M.Sc. Student</div>
+            <a href="https://cs.njupt.edu.cn/" target="_blank" >School of Computer Science and Engineering,</a>
+            <p></p>
+            <a href="https://m.njupt.edu.cn/_s5/_t44/main.psp"target="_blank">Nanjing University of Posts and Telecommunications</a>
+            
+            <p></p>
+            <div><span style="font-weight: bold;">Superviser:</span>&nbsp;&nbsp;<a href="../index.html">Wang rui</a></div>
+            <div><span style="font-weight: bold;">Email:</span>&nbsp;&nbsp;<a href="mailto:1985914344@qq.com">1985914344@qq.com</a></div>
+          </div>
+        <div id="right">
+            <div id="school_log" style=" width: 200px; height: 200px; overflow: hidden; margin-top:60px">  
+                <img src="../imgs/log.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto;">  
+            </div>
+        </div>
+    </div>
+    <div class="Biography">
+       <div class="small_title">Biography</div>
+       <div style="padding-left: 40px;">
+         <p>2024.09 ~ Now</p>
+         <p class="school">M.Sc,School of Computer Science and Engineering, Nanjing University of Posts and Telecommunications, China</p>
+         <p>2022.09 ~ 2024.06</p>
+         <p class="school">B.Sc, School of Information Engineering, North China University of Water Resources and Electric Power, China</p>
+       </div>
+    </div>
+    <div class="Research Interests">
+      <div class="small_title">Research Interests</div>
+      <div style="padding-left: 20px;">
+        <ul>
+          <li>Natural Language Processing</li>
+          <li>Larger Language Models</li>
+        </ul>
+      </div>
+   </div>
+  <!--  <div class="Selected Publications">
+    <div class="small_title">Selected Publications</div>
+    <div style="padding-left: 20px;">
+      <ul>
+        <li>Yuexuan An, Hui Xue, Xingyu Zhao, Ning Xu, Pengfei Fang, Xin Geng. Leveraging Bilateral Correlations for Multi-Label Few-Shot Learning. IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2024, in press.</li>
+        <li>Yuexuan An, Hui Xue, Xingyu Zhao, Ning Xu, Pengfei Fang, Xin Geng. Leveraging Bilateral Correlations for Multi-Label Few-Shot Learning. IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2024, in press.</li>
+        <li>Yuexuan An, Hui Xue, Xingyu Zhao, Ning Xu, Pengfei Fang, Xin Geng. Leveraging Bilateral Correlations for Multi-Label Few-Shot Learning. IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2024, in press.</li>
+        <li>Yuexuan An, Hui Xue, Xingyu Zhao, Ning Xu, Pengfei Fang, Xin Geng. Leveraging Bilateral Correlations for Multi-Label Few-Shot Learning. IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2024, in press.</li>
+      </ul>
+    </div>
+ </div> -->
+ <!-- <div class="Awards">
+  <div class="small_title">Awards</div>
+  <div style="padding-left: 20px;">
+    <ul>
+      <li>Huawei Scholarship, Southeast University Education Foundation, 2023</li>
+      <li>Merit Graduate Student, Southeast University, 2022</li>
+    </ul>
+  </div>
+</div> -->
+<div class="Correspondence">
+  <div class="small_title">Correspondence</div>
+  <div style="padding-left: 20px;">
+    <p style="font-weight: bold; padding-left:20px">Email</p>
+    <p class="school">1985914344@qq.com</p>
+    <!-- <p style="font-weight: bold; padding-left:20px">Laboratory</p>
+    <p class="school">448, Building of Computer Science and Engineering, Southeast University.</p> -->
+  </div>
+</div>
+    </div>   
+    <div class="right-div">
+    </div>  
+  </div>  
+</body>  
+</html>
