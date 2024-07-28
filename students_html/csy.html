@@ -111,7 +111,7 @@
         }
 
         .Biography {
-            border-top: 1px solid black;
+            
         }
 
         .small_title {
@@ -142,10 +142,11 @@
 
     .menu-category {
         font-size: 1rem;
+        margin-left: 0.625rem; /* 向左对齐 */
     }
 
     .menu-item {
-        margin-left: 1rem;
+        margin-left: 0.625rem; /* 向左对齐 */
     }
 
     #toptitle h2 {
@@ -172,31 +173,57 @@
     }
 
     #school_log img {
-        width: 100%; /* 图片宽度设为100% */
+        width: 8rem; /* 图片宽度设为100% */
         height: auto; /* 保持宽高比 */
         margin-top: 1rem; /* 图片间距 */
+    }
+
+    .head {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    #left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        margin-right: 0.5rem; /* 减小与mid的间距 */
+    }
+
+    #mid {
+        width: 50%;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    #right {
+        width: 25%;
+        margin-left: 1rem; /* 增加与mid的间距 */
     }
 }
 
 @media (max-width: 480px) {
     .left-div {
-        width: 30%; /* 调整侧边栏宽度 */
+        width: 26%; /* 调整侧边栏宽度 */
     }
 
     .mid-div {
-        width: 70%; /* 调整主体内容宽度 */
+        width: 74%; /* 调整主体内容宽度 */
     }
 
     body {
-        font-size: 10px; /* 调整字体大小 */
+        font-size: 7px; /* 调整字体大小 */
     }
 
     .menu-category {
         font-size: 0.875rem;
+        margin-left: 0.625rem; /* 向左对齐 */
     }
 
     .menu-item {
-        margin-left: 0.625rem;
+        margin-left: 0.625rem; /* 向左对齐 */
     }
 
     #toptitle h2 {
@@ -206,12 +233,16 @@
     .small_title {
         font-size: 1rem;
     }
-
     .school_log_img {
+        width: 3rem; /* 增大图片宽度 */
+        height: auto; /* 保持宽高比 */
+    }
+    .school_log_img img {
         width: 100%; /* 图片宽度设为100% */
         max-height: 5rem; /* 限制最大高度 */
         height: auto; /* 保持宽高比 */
     }
+    
 
     .stu_photo {
         width: 6rem; /* 调整图片宽度 */
@@ -223,11 +254,40 @@
     }
 
     #school_log img {
-        width: 100%; /* 图片宽度设为100% */
+        width: 8rem; /* 调整图片宽度 */
         height: auto; /* 保持宽高比 */
         margin-top: 0.5rem; /* 图片间距 */
     }
+
+    .head {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        height: 12rem;
+        font-size: 7px;
+    }
+
+    #left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 26%;
+        margin-right: 2rem; /* 减小与mid的间距 */
+    }
+
+    #mid {
+        width: 48%;
+        margin-left: 0.5rem; /* 增加与mid的间距 */
+        text-align: left;
+    }
+
+    #right {
+        width: 26%;
+        margin-left: 0rem; /* 增加与mid的间距 */
+    }
 }
+
+
 
     </style>
 </head>
