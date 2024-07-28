@@ -108,6 +108,7 @@
             max-height: 100%; /* 确保图片不超过容器高度 */
             margin-right: 20px;
             display: inline-block;
+            vertical-align: top;
         }
         li {  
             margin-bottom: 15px; /* 添加10像素的行间距 */  
@@ -135,28 +136,19 @@
         }
 }
 @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 600px) {
     body {
         transform: scale(0.4); /* 缩小页面 */
         transform-origin: top left; /* 设置缩放原点 */
         width: 250%; /* 确保缩小后内容依然能填满页面 */
-        height: 100%;
-        overflow: hidden;
+        height: auto; /* 调整高度 */
+        overflow: hidden; /* 隐藏滚动条 */
     }
 
-    .head,
-    .content,
-    .correspondence,
-    .news,
-    .researsh,
-    .activities,
-    .interests,
-    .foot {
-        width: 100%; 
-        height: 100%;
-        border-bottom: 1px solid black;
-      
+    .head, .content, .correspondence, .news, .researsh, .activities, .interests, .foot {
+        height: auto; /* 调整高度 */
     }
- 
+
     .head {
         display: flex;
         flex-direction: row; /* 垂直排列 */
@@ -168,9 +160,7 @@
         height: auto;
     }
 
-    #left,
-    #mid,
-    #right {
+    #left, #mid, #right {
         width: 100%;
     }
 
@@ -199,9 +189,7 @@
         flex-direction: row; /* 竖向排列 */
     }
 
-    .interests h4,
-    .interests_text,
-    .interests_img {
+    .interests h4, .interests_text, .interests_img {
         width: 100%;
     }
 
@@ -229,6 +217,7 @@
         max-height: 100%; /* 确保图片不超过容器高度 */
         margin-right: 0;
         display: inline-block;
+     
     }
 
     li {  
@@ -261,8 +250,8 @@
     }
 }
 
+}
 
-     
     </style>
 </head>
 <body>
@@ -276,9 +265,8 @@
             <p style="font-weight: bold; ">Lecturer</p>
             <p></p>
             <p></p>
+            <p><a href="https://cs.njupt.edu.cn/" target="_blank" >School of Computer Science, </a></p>
            
-            <p><a href="https://cs.njupt.edu.cn/" target="_blank" >School of Computer </a></p>
-            <a href="https://cs.njupt.edu.cn/" target="_blank" >Science,</a>
             <p></p>
             <p></p>
             <p>
@@ -286,14 +274,14 @@
             <a href="https://m.njupt.edu.cn/_s5/_t44/main.psp"target="_blank">  and Telecommunications</a>,china
             <p></p>
             <p></p>
-           <!--  <p style="color: rgb(126, 71, 4);">[Academic Profile]:</p>
-            <a href="#">Google Scholar</a>&nbsp;&nbsp;<a href="#">DBLP</a>&nbsp;&nbsp;<a href="#"> Semantic Scholar</a> -->
+            <p style="color: rgb(126, 71, 4);">[Academic Profile]:</p>
+            <a href="https://scholar.google.com/citations?user=vzjqZzsAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a>&nbsp;&nbsp;<a href="https://dblp.org/pid/06/2293-43.html" target="_blank">DBLP</a>
         </div>
         <div id="right">
             <div id="school_log">  
-                <img src="./imgs/log.png"> 
-                <img src="./imgs/teamlog.png">    
-               
+                <img src="./imgs/team-3.png"> 
+                <img  src="./imgs/log.png">
+                 
             </div>
         </div>
     </div>
@@ -310,7 +298,7 @@
         <h4>Research Interests:</h4>
         <div class="interests_content">
             <div class="interests_text">
-                <div style="padding-left: 20px;">Currently, I am a lecturer of Computer Science at Nanjing University of Posts and Telecommunications. I Lead the <span style="font-weight: bold;">TExt Analytics and Mining (TEAM)</span> research group at NJUPT. My research interests include text mining, natural language processing, machine learning, especially on Adversarial-neural Topic Modeling and Neural Topic Modeling. Before join in NJUPT,
+                <div style="padding-left: 20px;">Currently, I am a lecturer of Computer Science at Nanjing University of Posts and Telecommunications. I Lead the <a href="./index.html" target="_blank" >TExt Analytics and Mining (TEAM)</a> research group at NJUPT. My research interests include text mining, natural language processing, machine learning, especially on Adversarial-neural Topic Modeling and Neural Topic Modeling. Before join in NJUPT,
                      I got my Ph.D degree from <a href="https://palm.seu.edu.cn/zhangml/" target="_blank" >PAttern Learning and Mining (PALM)</a> Lab at Southeast University supervised by <a href="https://palm.seu.edu.cn/zhoudeyu/Home.html" target="_blank" >Prof. Deyu Zhou. </a> </div>
                 <div style="padding-left: 20px; margin-top: 10px; margin-bottom: 15px;">Most of my recent focus is on Neural Topic Modeling (NTM) and Adversarial-neural Topic Modeling (ATM) .  Neural Topic Modeling aims to mine semantic coherent topics/patterns from unlabeled texts (such as online reviews and social media posts) via deep generative neural networks or other textual representation learning paradigm. Obviously, Adversarial-neural Topic Modeling (ATM) is a special case of NTM, which is a novel topic modeling framework and mines topics with adversarial training by using the generator network to capture semantic patterns among texts. The right is the top-100 word cloud generated from my recent published papers.  </div>
             </div>
@@ -397,31 +385,24 @@
     </div>
     <div class="activities">
         <h4>Activities:</h4>
-        <p style="padding-left: 20px;">I served as reviewer for journals, such as TNNLS, IPM, NCA and ESWA. 
-            Also, I served as reviewer for conferences, like ACL 2023, EMNLP 2023.  </p>
+        <p style="padding-left: 20px;">I served as reviewer for journals, such as TNNLS, IPM, NCA, ESWA, FCS and Science China Information Sciences. </p>
     </div>
 
     <div class="foot">
         <p>Last Modified: 2024-07-27</p>
     </div>
 
-    <script>
-        // 修正页面高度以避免底部多余空白
+   
+     <script>
         function adjustHeight() {
-            var bodyHeight = document.body.scrollHeight;
-            var windowHeight = window.innerHeight;
-
-            if (bodyHeight < windowHeight) {
-                document.body.style.height = windowHeight + 'px';
-            } else {
-                document.body.style.height = 'auto';
+            if (window.innerWidth <= 600) {
+                document.body.style.height = (document.body.scrollHeight / 0.4) + 'px';
             }
         }
 
-        // 监听窗口大小变化事件
         window.addEventListener('resize', adjustHeight);
-        // 在页面加载完成时调整高度
-        document.addEventListener('DOMContentLoaded', adjustHeight);
+        window.addEventListener('load', adjustHeight);
     </script>
+   
 </body>
 </html>
